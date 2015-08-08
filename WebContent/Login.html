@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/atupCommon.js"></script>
+<script src="js/restClient.js"></script>
+<script src="js/md5.js"></script>
+<script src="js/users/user.js"></script>
+<script>
+        jQuery(document).ready(function () {
+            jQuery("#userName").focus();
+            jQuery('#password').keypress(function (e) {
+                if ((e.keyCode ? e.keyCode : e.which) == 13) {
+                    signIn();
+                }
+            });
+        });
+</script>
+</head>
+<body>
+<body>
+	<div>
+		<span>User Name:</span>
+    	<input type="text" id="userName" name="userName" value=""/>
+	</div>
+	
+	<div>
+		<span >Password:</span>
+   	 	<input type="password" id="password" name="password" value=""/>
+   	</div>
+   	
+	<div>
+    <input id="signInButton" type="button" value="Sign In" onclick="signIn();"/>
+	</div>
+	
+	<div id="resultDiv"></div>
+	
+	<a href="signUp.html">Sign Up</a><br/>
+</body>
+</html>

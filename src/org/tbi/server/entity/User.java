@@ -1,3 +1,7 @@
+/**
+ *@author Danyang 
+ */
+
 package org.tbi.server.entity;
 
 import org.springframework.data.annotation.Id;
@@ -10,14 +14,48 @@ public class User {
 	
 	private String name;
 	
-	private String comment;
-
-	public String getComment() {
-		return comment;
+	private String status;
+	
+	private String passWord;
+	
+	private String role;
+	
+	public User(){
+		
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public User(final String id){
+		this.id=id;		
+	}
+	
+	public User(final String name, final String passWord, final String role){
+		this.name=name;
+		this.passWord=passWord;
+		this.role=role;
+	}
+	
+	public String getPassWord() {
+		return passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getId() {

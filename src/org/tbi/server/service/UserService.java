@@ -1,3 +1,7 @@
+/**
+ *@author Danyang Li 
+ */
+
 package org.tbi.server.service;
 
 import java.util.List;
@@ -8,10 +12,15 @@ import org.tbi.server.dao.Dao;
 import org.tbi.server.entity.User;
 
 @Service
-public class DbService {
+public class UserService {
 	
 	@Autowired
 	private Dao dao;
+	
+	public User getUser(String name){
+		User user = dao.findOneByName(name);
+		return user;		
+	}
 	
 	public void addUser(User user){
 		dao.save(user);		
